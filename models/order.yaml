@@ -1,0 +1,25 @@
+table: orders
+name: Order
+columns:
+  order_id:
+    type: integer
+    nullable: false
+    is-primary-key: true
+    auto-increment: true
+  customer_id:
+    type: integer
+    nullable: false
+  order_date:
+    type: date
+    nullable: false
+relations:
+  order_details:
+    has-many: true
+    model: OrderDetail
+    relate:
+      order_id: order_id
+  customer:
+    has-one: true
+    model: Customer
+    relate:
+      customer_id: customer_id

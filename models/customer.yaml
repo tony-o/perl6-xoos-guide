@@ -1,0 +1,25 @@
+table: customers 
+name: Customer
+columns:
+  customer_id:
+    type: integer
+    nullable: false
+    is-primary-key: true
+    auto-increment: true
+  email_address:
+    type: varchar
+    length: 64
+    nullable: false
+  name:
+    type: varchar
+    length: 64
+    nullable: false
+  date_registered:
+    type: date
+    nullable: false
+relations:
+  orders:
+    has-many: true
+    model: Order
+    relate:
+      customer_id: customer_id

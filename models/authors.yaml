@@ -1,0 +1,20 @@
+table: authors 
+name: Author
+columns:
+  author_id:
+    type: integer
+    nullable: false
+    is-primary-key: true
+    auto-increment: true
+  name:
+    type: varchar
+    length: 64
+    nullable: false
+  birth_date:
+    type: date
+relations:
+  book:
+    has-many: true
+    model: Book
+    relate:
+      author_id: author_id

@@ -1,0 +1,25 @@
+table: order_details
+name: OrderDetail
+columns:
+  order_detail_id:
+    type: integer
+    nullable: false
+    is-primary-key: true
+    auto-increment: true
+  order_id:
+    type: integer
+    nullable: false
+  book_id:
+    type: integer
+    nullable: false
+relations:
+  book:
+    has-one: true
+    model: Book
+    relate:
+      book_id: book_id
+  order:
+    has-one: true
+    model: Order
+    relate:
+      order_id: order_id
